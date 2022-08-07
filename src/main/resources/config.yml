@@ -2,7 +2,7 @@
 #                            ABOUT PLUGIN                             #
 #######################################################################
 #                        Welcome to SimpleCheck                       #
-#                            Version: 1.0                             #
+#                            Version: 1.1                             #
 #                          Developer: Booldy                          #
 #                          GitHub: FatBolid                           #
 #                         Discord: Bolid#0553                         #
@@ -34,6 +34,8 @@ NoPermission: "%PREFIX% &7You are not permitted to do this!"
 
 # Here you can change the mobility of the frozen player.
 BlockPlayerMove: true
+# Here you can set whether a frozen player should receive any damage.
+BlockDamage: true
 # Here you can change the ability for the frozen player to drop items.
 BlockPlayerDropItem: true
 # Here you can change the ability of the frozen player to put items into the second arm.

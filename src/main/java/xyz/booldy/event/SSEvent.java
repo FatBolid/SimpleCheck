@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.*;
 import xyz.booldy.CheckPlugin;
@@ -30,6 +31,40 @@ public class SSEvent implements Listener {
         if (CheckPlugin.getInstance().getConfig().getBoolean("BlockPlayerMove")) {
             if (CheckPlugin.ss.containsKey(p.getName())) {
                 p.sendTitle(ChatUtil.fixColor(CheckPlugin.getInstance().getConfig().getString("FrozenTitle")), ChatUtil.fixColor(CheckPlugin.getInstance().getConfig().getString("FrozenSubTitle")), 0, 1000000, 0);
+                e.setCancelled(true);
+            }
+        } else {
+            e.setCancelled(false);
+        }
+    }
+
+    @EventHandler
+    public void onDamage(EntityDamageByEntityEvent e) {
+        if (CheckPlugin.getInstance().getConfig().getBoolean("BlockDamage")) {
+            if (e.getEntity() instanceof Player) {
+                Player p = (Player) e.getEntity();
+                if (CheckPlugin.ss.containsKey(p.getName())) {
+                    e.setCancelled(true);
+                }
+                if (e.getDamager() instanceof Player) {
+                    Player a = (Player) e.getDamager();
+                    if (CheckPlugin.ss.containsKey(a.getName())) {
+                        e.setCancelled(true);
+                    }
+                }
+            } else {
+                return;
+            }
+        } else {
+            e.setCancelled(false);
+        }
+    }
+
+    @EventHandler
+    public void PlayerItemDamageEvent(PlayerItemDamageEvent e) {
+        if (CheckPlugin.getInstance().getConfig().getBoolean("BlockDamage")) {
+            Player p = e.getPlayer();
+            if (CheckPlugin.ss.containsKey(p.getName())) {
                 e.setCancelled(true);
             }
         } else {
