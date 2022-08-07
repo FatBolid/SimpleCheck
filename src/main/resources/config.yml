@@ -1,0 +1,86 @@
+#######################################################################
+#                            ABOUT PLUGIN                             #
+#######################################################################
+#                        Welcome to SimpleCheck                       #
+#                            Version: 1.0                             #
+#                          Developer: Booldy                          #
+#                          GitHub: FatBolid                           #
+#                         Discord: Bolid#0553                         #
+#######################################################################
+
+#######################################################################
+#                            CONFIGURATION                            #
+#######################################################################
+
+# Here you can set the prefix for the whole plugin. Use it like placeholder to all messages %PREFIX%
+PREFIX: "&8[&c!&8]"
+
+# Here you can change the message when the observed Player isn't on the server. Placeholders: %PLAYER% - Playername.
+PlayerOffline: "%PREFIX% &7Could not find &c%PLAYER%!"
+
+#########################
+# ---> Permissions <--- #
+#########################
+
+# Here you can change the permission if the player can screenshare someone.
+PermissionForCheckCommand: "ss.admin"
+
+# Here you can change the message if the player don't have the permissions for commands.
+NoPermission: "%PREFIX% &7You are not permitted to do this!"
+
+######################
+# ---> Settings <--- #
+######################
+
+# Here you can change the mobility of the frozen player.
+BlockPlayerMove: true
+# Here you can change the ability for the frozen player to drop items.
+BlockPlayerDropItem: true
+# Here you can change the ability of the frozen player to put items into the second arm.
+BlockPlayerSwapHandItems: true
+# Here you can change the ability of the frozen player to pick up items.
+BlockPlayerPickupItem: true
+# Here you can change the ability of the frozen player to destroy blocks.
+BlockPlayerBreakBlock: true
+# Here you can change the ability of the frozen player to place blocks.
+BlockPlayerPlaceBlock: true
+# Here you can change the ability to teleport a frozen player using, for example, chorus fruit.
+BlockPlayerTeleport: true
+# Here you can change the hunger drop of the frozen player.
+BlockPlayerFoodLevelChange: true
+# If set to "true", the frozen player will only send chat messages to administrators (Normal players will not see these messages).
+PlayerMessageAdminOnly: true
+# Here you can set whether the player should have any commands blocked while checking.
+BlockPlayerCommands: true
+# Here you can set what commands the frozen player can enter.
+SSAllowedCommands:
+  - "/imhacking"
+  - "/imcheating"
+# Here you can change the command that console sends after the frozen player admits to cheats.
+ImHackingCmd: "tempban %PLAYER% 7d Cheating."
+# Here you can change the command that console sends after the frozen player logs out of the server.
+LogoutWhileFrozenCmd: "tempban %PLAYER% 14d Logout."
+
+######################################################################
+#                        MESSAGES (COMMAND)                          #
+######################################################################
+
+# Here you can set up a message that is sent to the administrator when a command is used incorrectly.
+CheckUsage: "%PREFIX% &7Usage: &c/ss [NAME]"
+# Here you can set up a message that is sent to the administrator when he wants to check himself.
+FrozenErrorMessage: "%PREFIX% &7You can not screenshare yourself."
+# Here you can set a message that is sent to the admin when it unfreezes the player.
+UnFrozenMessage: "%PREFIX% &7%PLAYER% has been &cunfrozen!"
+# Here you can set a message that is sent to the admin when freezes the player.
+FrozenMessage: "%PREFIX% &7%PLAYER% has been &cfrozen!"
+# Here you can set a message that is sent to the administrator from a frozen player in chat.
+MessageByFrozenPlayerToAdmins: "&8[&4Frozen&8] &7%PLAYER%&8: &7%MESSAGE%"
+# Here you can set a message to be sent to the player when not frozen and enter the command /imhacking or /imcheating.
+UrNotFrozenMessage: "%PREFIX% &7You are not frozen!"
+# Here you can set the message that is sent to the chat when a player admits to cheats.
+ImHackingMessage: "%PREFIX% &7%PLAYER% turned out to be a cheater."
+# Here you can set the message that is sent to the chat when the player logout while checking.
+LogoutWhileFrozenMessage: "%PREFIX% &7%PLAYER% logged out while checking."
+# Here you can set a title that is shown to the person being checked. (FrozenTitle = 1st line, FrozenSubTitle = 2nd line)
+FrozenTitle: "&4⚠ &cYou are frozen &4⚠"
+FrozenSubTitle: "&7Stay logged in or you will be banned!"

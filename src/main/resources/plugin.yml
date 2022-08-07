@@ -1,0 +1,15 @@
+main: xyz.booldy.CheckPlugin
+name: SimpleCheck
+author: Booldy
+website: https://github.com/FatBolid
+version: 1.0
+api-version: 1.16
+
+commands:
+  ss:
+    aliases:
+      - check
+      - freeze
+  imhacking:
+    aliases:
+      - imcheating
