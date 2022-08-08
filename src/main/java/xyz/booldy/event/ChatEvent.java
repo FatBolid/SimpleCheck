@@ -35,7 +35,7 @@ public class ChatEvent implements Listener {
         Player p = e.getPlayer();
         if (CheckPlugin.getInstance().getConfig().getBoolean("BlockPlayerCommands")) {
             if (CheckPlugin.ss.containsKey(p.getName())) {
-                if (!CheckPlugin.getInstance().getConfig().getList("SSAllowedCommands").contains(e.getMessage())) {
+                if (CheckPlugin.getInstance().getConfig().getList("SSNotAllowedCommands").contains(e.getMessage())) {
                     e.setCancelled(true);
                     p.sendMessage(ChatUtil.fixColor(CheckPlugin.getInstance().getConfig().getString("NoPermission").replace("%PREFIX%", CheckPlugin.getInstance().getConfig().getString("PREFIX"))));
                 } else {

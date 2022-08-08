@@ -2,7 +2,7 @@
 #                            ABOUT PLUGIN                             #
 #######################################################################
 #                        Welcome to SimpleCheck                       #
-#                            Version: 1.1                             #
+#                            Version: 1.2                             #
 #                          Developer: Booldy                          #
 #                          GitHub: FatBolid                           #
 #                         Discord: Bolid#0553                         #
@@ -54,10 +54,13 @@ BlockPlayerFoodLevelChange: true
 PlayerMessageAdminOnly: true
 # Here you can set whether the player should have any commands blocked while checking.
 BlockPlayerCommands: true
-# Here you can set what commands the frozen player can enter.
-SSAllowedCommands:
-  - "/imhacking"
-  - "/imcheating"
+# Here you can set what commands the frozen player can't enter.
+SSNotAllowedCommands:
+  - "/spawn"
+  - "/hub"
+  - "/lobby"
+  - "/home"
+  - "/warp"
 # Here you can change the command that console sends after the frozen player admits to cheats.
 ImHackingCmd: "tempban %PLAYER% 7d Cheating."
 # Here you can change the command that console sends after the frozen player logs out of the server.
