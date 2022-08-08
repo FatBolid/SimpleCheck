@@ -9,7 +9,7 @@
 
 - Make a Bungeecord support. You can freeze a player from another server.
 
-- Fix commands that the player can use while being frozen.
+- PlaceholderAPI support.
 
 - Blocking more events.
 
