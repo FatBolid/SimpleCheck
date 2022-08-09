@@ -11,7 +11,7 @@ import xyz.booldy.util.ChatUtil;
 public class CheckCmd implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (!sender.hasPermission("ss.use")) {
+        if (!sender.hasPermission(CheckPlugin.getInstance().getConfig().getString("PermissionForCheckCommand"))) {
             sender.sendMessage(ChatUtil.fixColor(CheckPlugin.getInstance().getConfig().getString("NoPermission").replace("%PREFIX%", CheckPlugin.getInstance().getConfig().getString("PREFIX"))));
             return true;
         }
